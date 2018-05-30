@@ -169,15 +169,19 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>hexo的安装、构建、部署、发布<br><a id="more"></a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Node.js安装好了后,执行以下命令<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span> npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
-<p>Hexo 将会在指定文件夹中新建所需要的文件<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span> hexo init &lt;folder&gt;</span><br><span class="line"><span class="meta">$</span> cd &lt;folder&gt;</span><br><span class="line"><span class="meta">$</span> npm install</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>Node.js安装好了后,执行以下命令<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-cli -g</span></span><br></pre></td></tr></table></figure></p>
+<p>Hexo 将会在指定文件夹中新建所需要的文件<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo init &lt;folder&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &lt;folder&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure></p>
 <p>新建完成后，指定文件夹的目录如下：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">   .</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure></p>
-<p>启动站点，默认4000端口号<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span> hexo server</span><br></pre></td></tr></table></figure></p>
-<p>也可以简写成<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span> hexo s</span><br></pre></td></tr></table></figure></p>
-<p>如果要换端口号<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span> hexo s -p 5000</span><br></pre></td></tr></table></figure></p>
+<p>启动站点，默认4000端口号<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo server</span></span><br></pre></td></tr></table></figure></p>
+<p>也可以简写成<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo s</span></span><br></pre></td></tr></table></figure></p>
+<p>如果要换端口号<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo s -p 5000</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>安装：在博客目录D:\hexo下右键点击Git Bash，输入以下命令<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/wuchong/jacman.git themes/jacman</span><br></pre></td></tr></table></figure></p>
 <p>启动：修改博客目录D:\hexo_config.yml中的theme属性，将其设置为jacman<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">theme: jacman</span><br></pre></td></tr></table></figure></p>
 <p>更新<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure></p>
+<h2 id="一键部署到github"><a href="#一键部署到github" class="headerlink" title="一键部署到github"></a>一键部署到github</h2><p>配置Github，修改配置文件_config.yml中deploy下的内容<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repo: https://github.com/yellyou/Simplx-s-blog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>安装部署插件<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>*说明：在安装这个插件的时候用npm报错了，换成cnpm淘宝镜像就安装成功了，可能原因是npm版本太旧，插件没有同步。<br>编译部署,执行项目清理和静态网页生成<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo clean ; hexo genarate</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo deploy</span></span><br></pre></td></tr></table></figure></p>
+<p>然后查看github上代码有没有更新</p>
 
                 <hr>
                 
@@ -203,7 +207,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装主题"><span class="toc-text">安装主题</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo"><span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装主题"><span class="toc-text">安装主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一键部署到github"><span class="toc-text">一键部署到github</span></a></li></ol>
                 </div>
             </div>
         </div>
